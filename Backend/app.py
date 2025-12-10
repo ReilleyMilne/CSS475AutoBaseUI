@@ -15,7 +15,7 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 
 CORS(
     app,
-    resources={r"/api/*": {"origins": "*"}},
+    resources={r"/api/*": {"origins": "https://lemon-tree-0c3cbd80f.3.azurestaticapps.net"}},
     supports_credentials=True,
     allow_headers=["Content-Type", "Authorization"]
 )
