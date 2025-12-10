@@ -1,7 +1,7 @@
 // =========================
 // Configuration
 // =========================
-export const BACKEND_URL = "https://autobasewebapp-bahyancpe5cjcbdp.eastus2-01.azurewebsites.net/api";
+export const BACKEND_URL = "https://autobasewebapp-bahyancpe5cjcbdp.eastus2-01.azurewebsites.net";
 
 // =========================
 // HTML Utilities
