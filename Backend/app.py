@@ -13,26 +13,18 @@ app.secret_key = "supersecretkey"
 # Optional: Session timeout
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 
-# Your frontend domain
+# --- CORS configuration ---
 FRONTEND_ORIGIN = "https://lemon-tree-0c3cbd80f.3.azurestaticapps.net"
 
-# CORS configuration
+# Enable CORS only for /api/* routes
 CORS(
     app,
-    resources={r"/api/*": {"origins": [FRONTEND_ORIGIN]}},
-    supports_credentials=True,
-    allow_headers=["Content-Type", "Authorization"]
+    resources={r"/api/*": {"origins": FRONTEND_ORIGIN}},
+    supports_credentials=True,  # Allow cookies/session
+    allow_headers=["Content-Type", "Authorization"],
+    methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 )
-
-# --- FALLBACK: Ensure CORS headers always get added ---
-@app.after_request
-def add_cors_headers(response):
-    response.headers.add("Access-Control-Allow-Origin", FRONTEND_ORIGIN)
-    response.headers.add("Access-Control-Allow-Credentials", "true")
-    response.headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization")
-    response.headers.add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
-    return response
-# ------------------------------------------------------
+# ---------------------------
 
 # Register blueprints
 app.register_blueprint(auth_bp, url_prefix="/api/auth")
