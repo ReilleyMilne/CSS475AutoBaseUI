@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Orders | AutoBase</title>
+  <link rel="stylesheet" href="/Frontend/style.css" />
+  <link rel="stylesheet" href="/Frontend/employee/sales_orders/sales_orders.css" />
+  <script src="/Frontend/main.js" type="module"></script>
+  <script src="/Frontend/employee/sales_orders/sales_orders.js" type="module"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="orders-container">
+    <h2>Sales Orders Management</h2>
+    
+    <div class="filters">
+      <h3>Filter Orders</h3>
+      <div class="filter-group">
+        <label>
+          Customer:
+          <input type="text" id="customerFilter" placeholder="Search customer name or ID..." />
+        </label>
+        <label>
+          Order ID:
+          <input type="text" id="orderIdFilter" placeholder="Search order ID..." />
+        </label>
+        <button id="clearFilters" class="filter-btn">Clear Filters</button>
+        <button id="refreshBtn" class="filter-btn">🔄 Refresh</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <h4>Total Orders</h4>
+        <p id="totalOrders">0</p>
+      </div>
+      <div class="stat-card">
+        <h4>Total Sales</h4>
+        <p id="totalRevenue">$0</p>
+      </div>
+    </div>
+
+    <div id="loadingMessage" class="loading">Loading orders...</div>
+    <div id="errorMessage" class="error" style="display: none;"></div>
+    
+    <div id="ordersContainer"></div>
+  </main>
+
+  <div id="assignModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Assign Employee to Order</h3>
+      <p id="modalOrderInfo"></p>
+      
+      <div class="form-group">
+        <label for="employeeSelect">Select Employee:</label>
+        <select id="employeeSelect" class="form-control">
+          <option value="">Loading employees...</option>
+        </select>
+      </div>
+      
+      <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: flex-end;">
+        <button id="assignBtn" class="btn-primary">Assign</button>
+        <button id="cancelBtn" class="btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 AutoBase Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>

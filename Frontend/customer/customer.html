@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoBase | My Account</title>
+  <link rel="stylesheet" href="/Frontend/style.css">
+  <link rel="stylesheet" href="/Frontend/customer/customer.css">
+  <script src="/Frontend/main.js" type="module"></script>
+  <script src="/Frontend/customer/customer.js" type="module"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="content">
+    <div class="dashboard-container">
+      <h2>My Account</h2>
+
+      <!-- Service Due Notification -->
+      <div id="serviceDueNotification" class="notification-area"></div>
+
+      <!-- Account Details Section -->
+      <div id="accountDetails" class="account-card">
+        <h3>Account Information</h3>
+        
+        <div id="customerInfo"></div>
+
+        <div id="customerInfoLoading" class="loading-container">
+          <div class="spinner"></div>
+          <p>Loading your details...</p>
+        </div>
+
+        <p id="customerInfoError" class="error-message" style="display:none;"></p>
+
+        <div id="editActions" class="edit-actions" style="display:none;">
+          <button id="editBtn" class="btn-primary">Edit Information</button>
+        </div>
+
+        <div id="editForm" style="display:none;">
+          <form id="customerEditForm">
+            <div class="form-group">
+              <label for="nameInput">Name:</label>
+              <input type="text" id="nameInput" name="Name" required>
+            </div>
+            <div class="form-group">
+              <label for="phoneInput">Phone:</label>
+              <input type="tel" id="phoneInput" name="Phone">
+            </div>
+            <div class="form-group">
+              <label for="emailInput">Email:</label>
+              <input type="email" id="emailInput" name="Email" required>
+            </div>
+            <div class="form-group">
+              <label for="addressInput">Address:</label>
+              <input type="text" id="addressInput" name="Address">
+            </div>
+            <div class="form-group">
+              <label for="genderInput">Gender:</label>
+              <select id="genderInput" name="Gender">
+                <option value="">-- Select --</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Save Changes</button>
+              <button type="button" id="cancelBtn" class="btn-secondary">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="records-section">
+        <h3>My Purchase Records</h3>
+        <div id="purchaseRecords" class="loading-container">
+          <div class="spinner"></div>
+          <p>Loading purchase records...</p>
+        </div>
+      </div>
+
+      <div class="records-section">
+        <h3>My Service Records</h3>
+        <div id="serviceRecords" class="loading-container">
+          <div class="spinner"></div>
+          <p>Loading service records...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 AutoBase Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>

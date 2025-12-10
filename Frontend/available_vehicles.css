@@ -1,0 +1,19 @@
+/* ============================
+   Container Styling
+============================ */
+#vehiclesContainer {
+  margin-top: 20px;
+  padding: 0 2rem;
+  animation: fadeIn 0.25s ease-in;
+}
+
+#vehiclesLoading {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

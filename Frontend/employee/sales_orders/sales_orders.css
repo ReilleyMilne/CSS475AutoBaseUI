@@ -1,0 +1,126 @@
+/* ============================
+   Page Layout
+============================ */
+.orders-container {
+  max-width: 1400px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* ============================
+   Filters Section
+============================ */
+.filters {
+  background: #a685e2;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(166, 133, 226, 0.2);
+}
+
+.filters h3 {
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.filter-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.filter-group label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 200px;
+  color: white;
+  font-weight: 500;
+}
+
+.filter-group input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: white;
+}
+
+/* Local override for filter buttons to look good on purple bg */
+.filter-btn {
+  padding: 0.5rem 1rem;
+  background: white;
+  color: #a685e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #d1b3ff;
+  color: white;
+}
+
+/* ============================
+   Statistics Cards
+============================ */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #a685e2;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(166, 133, 226, 0.2);
+}
+
+.stat-card h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* ============================
+   Loading / Messages
+============================ */
+.loading, .error, .no-orders {
+  text-align: center;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  background: #f8f5fc;
+  color: #666;
+}
+
+.error {
+  background: #ffebee;
+  color: #d9534f;
+}
+
+/* ============================
+   Responsive
+============================ */
+@media (max-width: 768px) {
+  .orders-container { padding: 0 1rem; }
+  .filter-group { flex-direction: column; }
+  .filter-group label { width: 100%; }
+}

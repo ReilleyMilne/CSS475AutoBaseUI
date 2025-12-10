@@ -1,0 +1,328 @@
+/* Manager Dashboard Styling */
+
+.manager-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.section-description {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #f0eaff;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: transparent;
+  color: #666;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.tab-button:hover {
+  color: var(--primary);
+  background: rgba(166, 133, 226, 0.05);
+}
+
+.tab-button.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  background: rgba(166, 133, 226, 0.08);
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+  background: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(166, 133, 226, 0.1);
+  animation: fadeIn 0.3s ease-in;
+}
+
+.dashboard-section h2 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #f0eaff;
+  padding-bottom: 0.75rem;
+}
+
+/* Controls Grid */
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: end;
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-item label {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.control-item.button-item {
+  justify-content: flex-end;
+}
+
+/* Results Grid (Cards) */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  animation: fadeIn 0.25s ease-in;
+}
+
+.card {
+  background: linear-gradient(135deg, #fbfdff 0%, #f8f5fc 100%);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e6dff6;
+  box-shadow: 0 2px 8px rgba(166, 133, 226, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(166, 133, 226, 0.15);
+}
+
+.card h3 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 600;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+}
+
+.card .common-table {
+  box-shadow: none;
+  border: none;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.card .common-table thead {
+  background-color: rgba(166, 133, 226, 0.1);
+  color: var(--primary);
+}
+
+.card .common-table th {
+  padding: 0.75rem 0.5rem;
+  font-size: 0.8rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  white-space: normal;
+  min-width: 70px;
+  max-width: 120px;
+}
+
+.card .common-table td {
+  padding: 0.75rem 0.5rem;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  min-width: 70px;
+}
+
+.card strong {
+  color: var(--primary);
+}
+
+/* Table Container (Full-width tables) */
+.table-container {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  animation: fadeIn 0.25s ease-in;
+}
+
+.full-width-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(166, 133, 226, 0.15);
+}
+
+.full-width-table thead {
+  background-color: var(--primary);
+  color: white;
+}
+
+.full-width-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.full-width-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f0eaff;
+  color: #555;
+}
+
+.full-width-table tbody tr:hover {
+  background-color: #f8f5fc;
+  transition: background-color 0.2s ease;
+}
+
+.full-width-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Empty States */
+.empty-message {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #666;
+  font-style: italic;
+  background: #f8f5fc;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.results-grid:empty::after {
+  content: 'No data available. Click refresh to load data.';
+  display: block;
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #666;
+  font-style: italic;
+  background: #f8f5fc;
+  border-radius: 8px;
+  grid-column: 1 / -1;
+}
+
+.table-container:empty::after {
+  content: 'Click "Generate Report" to view data.';
+  display: block;
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #666;
+  font-style: italic;
+  background: #f8f5fc;
+  border-radius: 8px;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(8px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tab-navigation {
+    flex-direction: column;
+  }
+  
+  .tab-button {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .controls-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-section {
+    padding: 1.5rem;
+  }
+  
+  .manager-container {
+    padding: 0 1rem;
+  }
+  
+  .full-width-table {
+    font-size: 0.85rem;
+  }
+  
+  .full-width-table th,
+  .full-width-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+  
+  .card h3 {
+    font-size: 1rem;
+  }
+  
+  .tab-button {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}

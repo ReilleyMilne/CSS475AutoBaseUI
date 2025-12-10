@@ -1,0 +1,154 @@
+/* =========================
+   Header & Controls
+   ========================= */
+.vehicle-section-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.vehicle-controls {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Use .form-control from style.css, but add specific width logic if needed */
+.search-bar {
+  min-width: 200px;
+}
+
+/* =========================
+   Vehicles Grid
+   ========================= */
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   Vehicle Cards
+   ========================= */
+.vehicle-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(166, 133, 226, 0.15); /* Purple shadow */
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f0eaff;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(166, 133, 226, 0.25);
+}
+
+.vehicle-header {
+  border-bottom: 2px solid #a685e2; /* Primary Purple */
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.vehicle-header h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0 0 0.25rem 0;
+}
+
+.vehicle-year {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.vehicle-details {
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f8f5fc;
+  font-size: 0.95rem;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row span {
+  color: #666;
+}
+
+.detail-row strong {
+  color: #333;
+}
+
+/* .btn-view-details inherits from .btn-primary in style.css, 
+   we just add width: 100% for the card look */
+.btn-view-details {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* =========================
+   Modal Specifics
+   ========================= */
+.modal-detail-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  background: #f8f5fc;
+  border-radius: 4px;
+}
+
+.detail-item label {
+  font-weight: 600;
+  color: #a685e2;
+}
+
+.no-vehicles {
+  text-align: center;
+  padding: 3rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  color: #666;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
+  .section-header { flex-direction: column; align-items: flex-start; }
+  .vehicle-controls { width: 100%; }
+  .search-bar { width: 100%; }
+}

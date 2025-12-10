@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoBase | My Sales Orders</title>
+  <link rel="stylesheet" href="/Frontend/style.css">
+  <link rel="stylesheet" href="/Frontend/my_sales_orders.css">
+  <script src="/Frontend/main.js" type="module"></script>
+  <script src="/Frontend/shared.js" type="module"></script>
+  <script src="/Frontend/my_sales_orders.js" type="module"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="content">
+    <div class="dashboard-container">
+      <div class="header-section">
+        <h2>My Sales Orders</h2>
+        <button id="refreshBtn" class="btn-refresh">🔄 Refresh</button>
+      </div>
+
+      <!-- Statistics Cards -->
+      <div id="statsContainer" class="stats-container">
+        <div class="stat-card">
+          <div class="stat-label">Total Orders</div>
+          <div class="stat-value" id="totalOrders">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Total Value</div>
+          <div class="stat-value" id="totalValue">$0.00</div>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingMessage" class="loading" style="display:none;">
+        <div class="spinner"></div>
+        <p>Loading your orders...</p>
+      </div>
+
+      <!-- Error Message -->
+      <p id="errorMessage" class="error-message" style="display:none;"></p>
+
+      <!-- Orders Container -->
+      <div id="ordersContainer" class="orders-container"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 AutoBase Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>

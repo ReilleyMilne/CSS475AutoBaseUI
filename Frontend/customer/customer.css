@@ -1,0 +1,350 @@
+/* =========================
+   Account Card
+   ========================= */
+.account-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(166, 133, 226, 0.1);
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.account-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #a685e2; /* Purple Theme */
+}
+
+/* =========================
+   Details Table
+   ========================= */
+.customer-details-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.customer-details-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f0eaff;
+}
+
+.customer-details-table tr:last-child td {
+  border-bottom: none;
+}
+
+.customer-details-table tr:hover {
+  background-color: #f8f5fc;
+}
+
+.customer-details-table td.label {
+  font-weight: 600;
+  color: #555;
+  width: 250px;
+  background-color: #fcfaff;
+  border-right: 1px solid #f0eaff;
+}
+
+.customer-details-table td.value {
+  color: #333;
+  word-break: break-word;
+}
+
+/* =========================
+   Edit Actions
+   ========================= */
+.edit-actions {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0eaff;
+  display: flex;
+  gap: 1rem;
+}
+
+/* =========================
+   Edit Form
+   ========================= */
+#customerEditForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #a685e2;
+  box-shadow: 0 0 0 3px rgba(166, 133, 226, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* =========================
+   Buttons
+   ========================= */
+.btn-primary,
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #a685e2;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #9375d1;
+  box-shadow: 0 2px 8px rgba(166, 133, 226, 0.3);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: #f0eaff;
+  color: #555;
+}
+
+.btn-secondary:hover {
+  background-color: #e8dff8;
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   Notification Area
+   ========================= */
+.notification-area {
+  margin-bottom: 2rem;
+}
+
+.alert {
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid;
+}
+
+.alert-warning {
+  background-color: #fff8e1;
+  border-left-color: #ffb300;
+  color: #856404;
+}
+
+.alert strong {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Records Section
+   ========================= */
+.records-section {
+  margin-top: 20px;
+  animation: fadeIn 0.25s ease-in;
+}
+
+.records-section h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #a685e2;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Wrap table for horizontal scroll on mobile */
+.records-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Clean normal table */
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(166, 133, 226, 0.1);
+  table-layout: auto;
+}
+
+.records-table thead {
+  background-color: #fcfaff;
+  border-bottom: 2px solid #a685e2;
+}
+
+.records-table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  word-break: break-word;
+}
+
+.records-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f0eaff;
+  color: #333;
+  word-break: break-word;
+}
+
+.records-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.records-table tbody tr:hover {
+  background-color: #f8f5fc;
+}
+
+/* =========================
+   Loading & Error States
+   ========================= */
+.error-message {
+  color: #d32f2f;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #f8f5fc;
+  border-radius: 4px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f0eaff;
+  border-top-color: #a685e2;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
+  .account-card {
+    padding: 1rem;
+  }
+
+  .customer-details-table td.label {
+    width: 40%;
+    font-size: 0.9rem;
+  }
+
+  .customer-details-table td {
+    padding: 0.75rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+
+  .edit-actions {
+    flex-direction: column;
+  }
+
+  .edit-actions .btn-primary {
+    width: 100%;
+  }
+
+  .records-section {
+    padding: 1rem 0;
+  }
+
+  .records-table th,
+  .records-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .records-table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+  }
+
+  .alert {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .records-table-fullwidth-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow-x: auto;
+  }
+
+  .records-table-fullwidth {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 0; /* Optional: full width looks cleaner */
+    box-shadow: 0 2px 8px rgba(166, 133, 226, 0.1);
+    table-layout: fixed; /* Forces equal spacing across wide tables */
+  }
+}

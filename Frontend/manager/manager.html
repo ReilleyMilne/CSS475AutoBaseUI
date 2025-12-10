@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Manager Dashboard - AutoBase</title>
+  <link rel="stylesheet" href="/Frontend/style.css">
+  <link rel="stylesheet" href="/Frontend/manager/manager.css">
+  <script type="module" src="/Frontend/main.js"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+  
+  <main class="content">
+    <div class="dashboard-container manager-container">
+      <h1>Manager Dashboard</h1>
+      <p class="subtitle">Comprehensive analytics and reporting tools</p>
+
+      <!-- Tab Navigation -->
+      <div class="tab-navigation">
+        <button class="tab-button active" data-tab="sales">Sales Analytics</button>
+        <button class="tab-button" data-tab="service">Service Analytics</button>
+        <button class="tab-button" data-tab="parts">Parts Management</button>
+        <button class="tab-button" data-tab="customer-report">Customer Report</button>
+        <button class="tab-button" data-tab="waiting-vehicles">Waiting Vehicles</button>
+        <button class="tab-button" data-tab="employee-performance">Employee Performance</button>
+      </div>
+
+      <!-- Sales Tab -->
+      <div id="sales-tab" class="tab-content active">
+        <section class="dashboard-section">
+          <h2>Sales Aggregation</h2>
+          <div class="controls-grid">
+            <div class="control-item">
+              <label for="salesBy">Aggregate By</label>
+              <select id="salesBy" class="form-control">
+                <option value="date">Date</option>
+                <option value="employee">Employee</option>
+              </select>
+            </div>
+            <div class="control-item">
+              <label for="salesStartDate">Start Date</label>
+              <input id="salesStartDate" type="date" class="form-control">
+            </div>
+            <div class="control-item">
+              <label for="salesEndDate">End Date</label>
+              <input id="salesEndDate" type="date" class="form-control">
+            </div>
+            <div class="control-item">
+              <label for="salesEmployeeSelect">Employee</label>
+              <select id="salesEmployeeSelect" class="form-control">
+                <option value="">All Employees</option>
+              </select>
+            </div>
+            <div class="control-item button-item">
+              <button id="refreshSales" class="btn-primary">Refresh Sales</button>
+            </div>
+          </div>
+          <div id="salesResults" class="results-grid"></div>
+        </section>
+      </div>
+
+      <!-- Service Tab -->
+      <div id="service-tab" class="tab-content">
+        <section class="dashboard-section">
+          <h2>Service Summary</h2>
+          <div class="controls-grid">
+            <div class="control-item">
+              <label for="serviceBy">Aggregate By</label>
+              <select id="serviceBy" class="form-control">
+                <option value="date">Date</option>
+                <option value="employee">Employee</option>
+              </select>
+            </div>
+            <div class="control-item">
+              <label for="serviceStartDate">Start Date</label>
+              <input id="serviceStartDate" type="date" class="form-control">
+            </div>
+            <div class="control-item">
+              <label for="serviceEndDate">End Date</label>
+              <input id="serviceEndDate" type="date" class="form-control">
+            </div>
+            <div class="control-item">
+              <label for="serviceEmployeeSelect">Employee</label>
+              <select id="serviceEmployeeSelect" class="form-control">
+                <option value="">All Employees</option>
+              </select>
+            </div>
+            <div class="control-item button-item">
+              <button id="refreshService" class="btn-primary">Refresh Service</button>
+            </div>
+          </div>
+          <div id="serviceResults" class="results-grid"></div>
+        </section>
+      </div>
+
+      <!-- Parts Tab -->
+      <div id="parts-tab" class="tab-content">
+        <section class="dashboard-section">
+          <h2>Parts Usage & Low Stock</h2>
+          <div class="controls-grid">
+            <div class="control-item">
+              <label for="partsThreshold">Low Stock Threshold</label>
+              <input id="partsThreshold" type="number" value="5" min="0" class="form-control">
+            </div>
+            <div class="control-item button-item">
+              <button id="refreshParts" class="btn-primary">Get Parts Usage</button>
+            </div>
+          </div>
+          <div id="partsResults" class="results-grid"></div>
+        </section>
+      </div>
+
+      <!-- Customer Report Tab -->
+      <div id="customer-report-tab" class="tab-content">
+        <section class="dashboard-section">
+          <h2>Customer Vehicle & Service Report</h2>
+          <p class="section-description">View customer vehicle ownership and service history</p>
+          <button id="runCustomerReport" class="btn-primary">Generate Report</button>
+          <div id="customerReportResults" class="table-container"></div>
+        </section>
+      </div>
+
+      <!-- Waiting Vehicles Tab -->
+      <div id="waiting-vehicles-tab" class="tab-content">
+        <section class="dashboard-section">
+          <h2>Vehicles Awaiting Parts</h2>
+          <p class="section-description">View all vehicles waiting for service with required parts</p>
+          <button id="runWaitingVehicles" class="btn-primary">Generate Report</button>
+          <div id="waitingVehiclesResults" class="table-container"></div>
+        </section>
+      </div>
+
+      <!-- Employee Performance Tab -->
+      <div id="employee-performance-tab" class="tab-content">
+        <section class="dashboard-section">
+          <h2>Employee Performance (2024)</h2>
+          <p class="section-description">Employee sales performance and Seattle customer metrics</p>
+          <button id="runEmployeePerformance" class="btn-primary">Generate Report</button>
+          <div id="employeePerformanceResults" class="table-container"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/Frontend/manager/manager.js"></script>
+</body>
+</html>

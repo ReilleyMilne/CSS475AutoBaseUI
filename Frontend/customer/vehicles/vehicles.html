@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoBase | My Vehicles</title>
+    <link rel="stylesheet" href="/Frontend/style.css">
+    <link rel="stylesheet" href="/Frontend/customer/vehicles/vehicle.css">
+    <script src="/Frontend/main.js" type="module"></script>
+    <script src="/Frontend/customer/vehicles/vehicles.js" type="module"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="content">
+    <div class="dashboard-container">
+      <div class="section-header">
+        <h2>My Vehicles</h2>
+        <div class="vehicle-controls">
+          <input id="searchInput" class="form-control search-bar" type="text" placeholder="Search vehicles...">
+          
+          <select id="sortSelect" class="form-control sort-dropdown">
+            <option value="year-desc">Newest First</option>
+            <option value="year-asc">Oldest First</option>
+            <option value="make-asc">Make (A-Z)</option>
+            <option value="make-desc">Make (Z-A)</option>
+          </select>
+          
+          <button id="refreshBtn" class="btn-primary">🔄 Refresh</button>
+        </div>
+      </div>
+
+      <div id="loadingMessage" class="loading-container">
+        <div class="spinner"></div>
+        <p>Loading your vehicles...</p>
+      </div>
+
+      <div id="errorMessage" class="error-message" style="display:none;"></div>
+
+      <div id="vehiclesContainer" class="vehicles-grid"></div>
+    </div>
+  </main>
+
+  <div id="vehicleModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3 id="modalTitle">Vehicle Details</h3>
+      <div id="modalBody" style="margin: 1.5rem 0;"></div>
+      <div style="text-align: right;">
+        <button id="closeModalBtn" class="btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 AutoBase Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>

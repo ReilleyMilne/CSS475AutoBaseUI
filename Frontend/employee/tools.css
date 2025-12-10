@@ -1,0 +1,133 @@
+/* Employee Tools Styling */
+
+.dashboard-container h1 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
+.tool-section {
+  background: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(166, 133, 226, 0.1);
+  animation: fadeIn 0.3s ease-in;
+}
+
+.tool-section h2 {
+  color: var(--primary);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #f0eaff;
+  padding-bottom: 0.75rem;
+}
+
+.lookup-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.results-container {
+  margin-top: 1.5rem;
+  animation: fadeIn 0.25s ease-in;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(166, 133, 226, 0.15);
+}
+
+.results-table thead {
+  background-color: var(--primary);
+  color: white;
+}
+
+.results-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.results-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f0eaff;
+  color: #555;
+}
+
+.results-table tbody tr:hover {
+  background-color: #f8f5fc;
+  transition: background-color 0.2s ease;
+}
+
+.results-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.panel-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+  background: #f8f5fc;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(8px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .lookup-controls {
+    grid-template-columns: 1fr;
+  }
+  
+  .tool-section {
+    padding: 1.5rem;
+  }
+  
+  .results-table {
+    font-size: 0.9rem;
+  }
+  
+  .results-table th,
+  .results-table td {
+    padding: 0.75rem;
+  }
+}

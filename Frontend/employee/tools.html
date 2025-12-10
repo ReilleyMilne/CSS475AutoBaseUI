@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Employee Tools - AutoBase</title>
+  <link rel="stylesheet" href="/Frontend/style.css">
+  <link rel="stylesheet" href="/Frontend/employee/tools.css">
+  <script type="module" src="/Frontend/main.js"></script>
+</head>
+<body>
+  <div id="navbar"></div>
+  
+  <main class="content">
+    <div class="dashboard-container">
+      <h1>Employee Tools</h1>
+      <p class="subtitle">Lookup sales, service records, and parts inventory</p>
+
+      <section class="tool-section">
+        <h2>Sales Lookup</h2>
+        <div class="lookup-controls">
+          <div class="input-group">
+            <label for="vinInput">Vehicle VIN</label>
+            <input id="vinInput" type="text" placeholder="Enter VIN" class="form-control">
+            <button id="lookupSalesByVin" class="btn-primary">Find Sales by VIN</button>
+          </div>
+          <div class="input-group">
+            <label for="customerIdInput">Customer ID</label>
+            <input id="customerIdInput" type="text" placeholder="Enter Customer ID" class="form-control">
+            <button id="lookupSalesByCustomer" class="btn-primary">Find Sales by Customer</button>
+          </div>
+        </div>
+        <div id="salesResults" class="results-container"></div>
+      </section>
+
+      <section class="tool-section">
+        <h2>Service Lookup</h2>
+        <div class="lookup-controls">
+          <div class="input-group">
+            <label for="serviceVinInput">Vehicle VIN</label>
+            <input id="serviceVinInput" type="text" placeholder="Enter VIN" class="form-control">
+            <button id="lookupServiceByVin" class="btn-primary">Find Service by VIN</button>
+          </div>
+          <div class="input-group">
+            <label for="serviceCustomerIdInput">Customer ID</label>
+            <input id="serviceCustomerIdInput" type="text" placeholder="Enter Customer ID" class="form-control">
+            <button id="lookupServiceByCustomer" class="btn-primary">Find Service by Customer</button>
+          </div>
+        </div>
+        <div id="serviceResults" class="results-container"></div>
+      </section>
+
+      <section class="tool-section">
+        <h2>Parts Shortage Report</h2>
+        <div class="lookup-controls">
+          <div class="input-group">
+            <label for="shortageThreshold">Stock Threshold (≤)</label>
+            <input id="shortageThreshold" type="number" value="5" min="0" class="form-control">
+            <button id="runShortageReport" class="btn-primary">Run Report</button>
+          </div>
+        </div>
+        <div id="shortageResults" class="results-container"></div>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="/Frontend/employee/tools.js"></script>
+</body>
+</html>

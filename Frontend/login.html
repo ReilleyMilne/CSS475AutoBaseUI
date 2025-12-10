@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | AutoBase</title>
+  <link rel="stylesheet" href="/Frontend/style.css" />
+  <script src="/Frontend/main.js" type="module"></script>
+  <style>
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: calc(100vh - 200px);
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="content">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="role">Select Role:</label>
+      <select id="role" required>
+        <option value="">-- Choose Role --</option>
+        <option value="manager">Manager</option>
+        <option value="employee">Employee</option>
+        <option value="customer">Customer</option>
+      </select>
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+  </main>
+</body>
+</html>
