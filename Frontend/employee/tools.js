@@ -1,4 +1,4 @@
-import { BACKEND_URL, formatCurrency, formatDate, formatLabel } from "/Frontend/shared.js";
+import { BACKEND_URL, formatCurrency, formatDate, formatLabel } from "../shared.js";
 
 async function postJson(path, body){
   const res = await fetch(path, {

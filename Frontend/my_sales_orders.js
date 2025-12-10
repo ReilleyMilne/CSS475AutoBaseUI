@@ -6,7 +6,7 @@ import {
   safeFetchCurrentUser,
   showLoading,
   hideLoading
-} from "/Frontend/shared.js";
+} from "./shared.js";
 
 // Global state
 let userRole = null;
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const user = await safeFetchCurrentUser();
   
   if (!user) {
-    window.location.href = "/Frontend/login.html";
+    window.location.href = "./login.html";
     return;
   }
 
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Verify correct role access
   if (userRole !== "customer" && userRole !== "employee") {
     alert("Unauthorized access.");
-    window.location.href = "/Frontend/login.html";
+    window.location.href = "./login.html";
     return;
   }
 

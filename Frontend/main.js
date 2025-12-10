@@ -1,4 +1,4 @@
-import { BACKEND_URL, safeFetchCurrentUser } from "/Frontend/shared.js";
+import { BACKEND_URL, safeFetchCurrentUser } from "./shared.js";
 
 // =========================
 // Initialization
@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 // =========================
 async function loadNavbar(container) {
   try {
-    const response = await fetch("/Frontend/navbar.html");
+    const response = await fetch("./navbar.html");
     if (!response.ok) throw new Error(`Failed to load navbar: ${response.status}`);
     container.innerHTML = await response.text();
 
     const loginBtn = document.getElementById("loginBtn");
     const logoutBtn = document.getElementById("logoutBtn");
 
-    if (loginBtn) loginBtn.addEventListener("click", () => (window.location.href = "/Frontend/login.html"));
+    if (loginBtn) loginBtn.addEventListener("click", () => (window.location.href = "./login.html"));
     if (logoutBtn) logoutBtn.addEventListener("click", handleLogout);
   } catch (err) {
     console.error("Error loading navbar:", err);
@@ -63,11 +63,11 @@ async function handleLogin() {
 
     alert(`Logged in as ${role}: ${username}`);
     if (role === "employee") {
-      window.location.href = "/Frontend/employee/employee.html";
+      window.location.href = "./employee/employee.html";
     } else if (role === "manager") {
-      window.location.href = "/Frontend/manager/manager.html";
+      window.location.href = "./manager/manager.html";
     } else {
-      window.location.href = "/Frontend/customer/customer.html";
+      window.location.href = "./customer/customer.html";
     }
   } catch (err) {
     console.error(err);
@@ -79,7 +79,7 @@ async function handleLogout() {
   try {
     await fetch(`${BACKEND_URL}/api/auth/logout`, { method: "POST", credentials: "include" });
     alert("Logged out successfully!");
-    window.location.href = "/Frontend/index.html";
+    window.location.href = "./index.html";
   } catch (err) {
     console.error(err);
     alert("Error logging out.");
@@ -98,7 +98,7 @@ function updateNavbarState(user) {
   if (!navLeft) return;
 
   // base logo/link
-  navLeft.innerHTML = `<a href="/Frontend/index.html" class="logo">AutoBase</a>`;
+  navLeft.innerHTML = `<a href="./index.html" class="logo">AutoBase</a>`;
 
   if (user && user.username) {
     if (loginBtn) loginBtn.style.display = "none";
@@ -107,21 +107,21 @@ function updateNavbarState(user) {
 
     if (user.user_type === "employee") {
       navLeft.innerHTML += `
-        <a href="/Frontend/employee/sales_orders/sales_orders.html">Sales Orders</a>
-        <a href="/Frontend/my_sales_orders.html">Current Sales Orders</a>
-        <a href="/Frontend/employee/tools.html">Employee Tools</a>
+        <a href="./employee/sales_orders/sales_orders.html">Sales Orders</a>
+        <a href="./my_sales_orders.html">Current Sales Orders</a>
+        <a href="./employee/tools.html">Employee Tools</a>
       `;
     } else if (user.user_type === "customer") {
       navLeft.innerHTML += `
-        <a href="/Frontend/customer/customer.html">My Account</a>
-        <a href="/Frontend/customer/vehicles/vehicles.html">Vehicles</a>
-        <a href="/Frontend/my_sales_orders.html">Current Sales Orders</a>
+        <a href="./customer/customer.html">My Account</a>
+        <a href="./customer/vehicles/vehicles.html">Vehicles</a>
+        <a href="./my_sales_orders.html">Current Sales Orders</a>
       `;
     } else if (user.user_type === "manager") {
       navLeft.innerHTML += `
-        <a href="/Frontend/manager/manager.html">Manager Dashboard</a>
-        <a href="/Frontend/employee/sales_orders/sales_orders.html">Sales Orders</a>
-        <a href="/Frontend/employee/tools.html">Employee Tools</a>
+        <a href="./manager/manager.html">Manager Dashboard</a>
+        <a href="./employee/sales_orders/sales_orders.html">Sales Orders</a>
+        <a href="./employee/tools.html">Employee Tools</a>
       `;
     }
   } else {
@@ -130,17 +130,17 @@ function updateNavbarState(user) {
   }
 
   // always show available vehicles
-  navLeft.innerHTML += `<a href="/Frontend/available_vehicles.html">Available Vehicles</a>`;
+  navLeft.innerHTML += `<a href="./available_vehicles.html">Available Vehicles</a>`;
 }
 
 function handlePageProtection(user) {
   const path = window.location.pathname;
   if (path.includes("/employee/") && (!user || (user.user_type !== "employee" && user.user_type !== "manager"))) {
     alert("Unauthorized access.");
-    window.location.href = "/Frontend/login.html";
+    window.location.href = "./login.html";
   }
   if (path.includes("/customer/") && (!user || user.user_type !== "customer")) {
     alert("Unauthorized access.");
-    window.location.href = "/Frontend/login.html";
+    window.location.href = "./login.html";
   }
 }

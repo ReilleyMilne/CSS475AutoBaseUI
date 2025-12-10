@@ -5,7 +5,7 @@ import {
   showLoading,
   hideLoading,
   safeFetchCurrentUser
-} from "/Frontend/shared.js";
+} from "../../shared.js";
 
 // Global state
 let allVehicles = [];
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const user = await safeFetchCurrentUser();
   if (!user || user.user_type !== "customer") {
     alert("Please log in as a customer.");
-    window.location.href = "/Frontend/login.html";
+    window.location.href = "../../login.html";
     return;
   }
 

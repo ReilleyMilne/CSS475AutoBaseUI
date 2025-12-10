@@ -5,7 +5,7 @@ import {
   showLoading,
   hideLoading,
   safeFetchCurrentUser
-} from "/Frontend/shared.js";
+} from "../shared.js";
 
 // Global data store
 let currentCustomerData = null;
@@ -19,7 +19,7 @@ async function initPage() {
   const user = await safeFetchCurrentUser();
   if (!user || user.user_type !== "customer") {
     alert("Please log in as a customer.");
-    return window.location.href = "/Frontend/login.html";
+    return window.location.href = "../login.html";
   }
 
   await Promise.all([
