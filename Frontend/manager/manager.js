@@ -1,4 +1,4 @@
-import { BACKEND_URL, formatCurrency, formatDate } from "/Frontend/shared.js";
+import { BACKEND_URL, formatCurrency, formatDate } from "../shared.js";
 
 async function apiGet(path){
   const url = path.startsWith('http') ? path : (BACKEND_URL + path);

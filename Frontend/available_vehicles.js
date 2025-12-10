@@ -1,4 +1,4 @@
-import { BACKEND_URL, escapeHtml, formatCurrency, safeFetchCurrentUser } from "/Frontend/shared.js";
+import { BACKEND_URL, escapeHtml, formatCurrency, safeFetchCurrentUser } from "./shared.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await new Promise(resolve => setTimeout(resolve, 100)); // Small buffer

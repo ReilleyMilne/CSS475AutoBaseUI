@@ -6,7 +6,7 @@ import {
   showLoading,
   hideLoading,
   safeFetchCurrentUser
-} from "/Frontend/shared.js";
+} from "../../shared.js";
 
 // Global state
 let allOrders = [];
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Allow both employee and manager access
   if (!user || (user.user_type !== "employee" && user.user_type !== "manager")) {
     alert("Unauthorized access. Employee or Manager accounts only.");
-    window.location.href = "/Frontend/login.html";
+    window.location.href = "../../login.html";
     return;
   }
 
