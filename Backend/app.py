@@ -15,7 +15,7 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=30)
 
 CORS(
     app,
-    resources={r"/api/*": {"origins": "http://127.0.0.1:5500"}},
+    resources={r"/api/*": {"origins": "*"}},
     supports_credentials=True,
     allow_headers=["Content-Type", "Authorization"]
 )
@@ -26,6 +26,3 @@ app.register_blueprint(customer_bp, url_prefix="/api/customer")
 app.register_blueprint(vehicle_bp, url_prefix="/api/vehicle")
 app.register_blueprint(employee_bp, url_prefix="/api/employee")
 app.register_blueprint(manager_bp, url_prefix="/api/manager")
-
-if __name__ == "__main__":
-    app.run(debug=True)
